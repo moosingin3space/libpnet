@@ -379,7 +379,7 @@ fn layer2() {
                     if i == 10_000 {
                         panic!("layer2: did not find matching packet after 10_000 iterations");
                     }
-                    if EthernetPacket::new(&packet[..]).unwrap() == eh {
+                    if EthernetPacket::new(&packet[..]).unwrap().payload() == eh.payload() {
                         return;
                     }
                     i += 1;
